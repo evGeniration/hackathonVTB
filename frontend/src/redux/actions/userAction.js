@@ -8,3 +8,14 @@ export const fetchUsers = () =>{
         return dispatch({type:FETCH_USERS,payload:response.data})
     }
 }
+
+export const addUser = (data) =>{
+    return async dispatch => 
+    {
+        console.log(data)
+        const response = await axios.post('http://localhost:5000/user', data)
+        console.log(response.data)
+        return dispatch({})
+    }
+}
+
