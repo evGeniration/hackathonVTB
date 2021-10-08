@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import {fetchUsers} from "./redux/actions";
 import {useDispatch} from "react-redux";
+import {LoginPage} from "./Components/LoginPage"
+
+
 
 function App() {
 
@@ -10,8 +13,7 @@ function App() {
 
   return (
     <div className="App">
-    123
-    <p></p>
+      <LoginPage />
     </div>
   );
 }
