@@ -30,6 +30,7 @@ export const publicRoutes=[
     },
     {
         path:'/reg', exact:true, component:Registr
+
     },
     {
         path:'/datasets', exact:true, component:DataSets
