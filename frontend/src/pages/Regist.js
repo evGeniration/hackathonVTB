@@ -13,20 +13,24 @@ import Select from '@mui/material/Select';
 import { addUser } from "../redux/actions/userAction";
 import style from "../components/login.module.css"
 import { width } from "@mui/system";
+import {useHistory} from "react-router";
 
 export const Registr = () => {
+  const history = useHistory()
   const { control, handleSubmit, formState: {errors} } = useForm();
   const [age, setAge] = React.useState('');
   const dispatch =useDispatch()
   const {setIsAuth} = useIsAuth()
 
   const onSubmit = async(data) => {
-    // setIsAuth(true)
     const userObject = {
      ...data, role: age
     }
     console.log(userObject)
-    await addUser(data)
+    const response = await addUser(data)
+    if(response.status === 201){
+      history.push('/login')
+    }
   };
   const changeState = (event) => {
     setAge(event.target.value);
