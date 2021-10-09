@@ -3,7 +3,7 @@ import classes from './index.module.css'
 import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 
-const Main = props => {
+const Home = props => {
     return (
         <div className={classes.main}>
             <Link to={'/datasets'}>
@@ -15,4 +15,4 @@ const Main = props => {
     )
 }
 
-export default Main
+export default Home
