@@ -1,0 +1,17 @@
+
+
+.navBarBox {
+    background-color: #979bfe;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.text {
+    color: white;
+    text-decoration: none;
+}
+
+.containerText {
+    display: flex;
+   padding-right: 15px;
+}

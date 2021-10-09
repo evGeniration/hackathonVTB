@@ -1,6 +1,7 @@
 import Home from "../pages/Home";
 import Testing from "../pages/Testing";
 import {Login} from "../pages/Login";
+import { Registr } from "../pages/Regist";
 
 
 export const privateRoutes=[
@@ -19,4 +20,7 @@ export const publicRoutes=[
     {
         path:'/login', exact:true, component:Login
     },
+    {
+        path:'/reg', exact:true, component:Registr
+    }
 ]
