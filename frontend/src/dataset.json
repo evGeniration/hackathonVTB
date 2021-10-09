@@ -1,0 +1,37 @@
+[
+  {
+    "id": "asdfda",
+    "name": "Danya",
+    "surname": "Alyukov",
+    "birthDate": "Fri Jun 15 2001",
+    "salary": 10
+  },
+  {
+    "id": "sadamm",
+    "name": "Ruslan",
+    "surname": "Bochkov",
+    "birthDate": "Sun Jul 04 1999",
+    "salary": 18
+  },
+  {
+    "id": "kclnlj",
+    "name": "Evgeniy",
+    "surname": "Zoloedov",
+    "birthDate": "Sun Jun 10 2001",
+    "salary": 5
+  },
+  {
+    "id": "dfdada",
+    "name": "Vladimir",
+    "surname": "Mikhailov",
+    "birthDate": "Thu Feb 21 2002",
+    "salary": 30
+  },
+  {
+    "id": "aklsdf",
+    "name": "Artemiy",
+    "surname": "Yudin",
+    "birthDate": "Thu Feb 22 2001",
+    "salary": 8
+  }
+]

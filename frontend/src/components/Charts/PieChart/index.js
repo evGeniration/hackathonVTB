@@ -4,6 +4,7 @@ import {
     Chart,
     PieSeries,
     Title,
+    Legend
 } from '@devexpress/dx-react-chart-material-ui'
 
 const PieChart = ({data, argumentField, valueField}) => {
@@ -17,8 +18,9 @@ const PieChart = ({data, argumentField, valueField}) => {
                     argumentField={argumentField}
                 />
                 <Title
-                    text='ZHOPA'
+                    text={valueField}
                 />
+                <Legend/>
             </Chart>
         </Paper>
     )

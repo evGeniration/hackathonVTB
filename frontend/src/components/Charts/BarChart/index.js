@@ -11,7 +11,7 @@ const BarChart = ({data, valueField, argumentField}) => {
                 <ArgumentAxis />
                 <ValueAxis max={data.length}/>
                 <BarSeries argumentField={argumentField} valueField={valueField}/>
-                {/*<Title text={'ANAL'}/>*/}
+                <Title text={valueField}/>
             </Chart>
         </Paper>
     )
