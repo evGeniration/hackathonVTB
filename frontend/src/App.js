@@ -1,17 +1,18 @@
 
 import './App.css';
-import {LoginPage} from "./Components/LoginPage"
+import {Login} from "./pages/Login"
 
 import React from 'react'
-import Testing from "./Components/Testing";
+import Testing from "./pages/Testing";
+import Layout from "./components/Layout";
+import {AppRouter} from "./components/AppRouter";
 
 function App() {
 
   return (
-    <div className="App">
-      <LoginPage />
-        <Testing/>
-    </div>
+    <Layout>
+      <AppRouter/>
+    </Layout>
   );
 }
 
