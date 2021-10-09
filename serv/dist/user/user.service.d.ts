@@ -7,6 +7,11 @@ export declare class UserService {
     createUser(dto: CreateUserDto): Promise<User>;
     getUserById(id: ObjectId): Promise<User>;
     getAll(): Promise<User[]>;
-    getRegisterUser(dto: CreateUserDto): Promise<User>;
+    getRegisterUser(dto: CreateUserDto): Promise<{
+        user: User & import("mongoose").Document<any, any, any> & {
+            _id: any;
+        };
+        exist: boolean;
+    }>;
     deleteUserById(id: ObjectId): Promise<string>;
 }

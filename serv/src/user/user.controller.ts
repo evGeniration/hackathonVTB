@@ -22,7 +22,7 @@ export class UserController{
         return this.userService.getUserById(id)
     }
 
-    @Get('')
+    @Post('isregistred')
     getRegisterUser(@Body() dto:CreateUserDto){
         return this.userService.getRegisterUser(dto)
     }

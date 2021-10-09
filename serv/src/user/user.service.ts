@@ -21,13 +21,15 @@ export class UserService{
 
     async getAll():Promise<User[]>{
         const users=await this.userModel.find()
-
         return users
     }
-    async getRegisterUser(dto:CreateUserDto):Promise<User>{
+    async getRegisterUser(dto:CreateUserDto){
         const {login,password}=dto
         const user=await this.userModel.find({login, password})
-        return user[0]
+        return {
+            user:user[0],
+            exist:true
+        }
     }
 
     async deleteUserById(id:ObjectId):Promise<string>{
