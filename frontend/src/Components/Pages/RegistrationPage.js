@@ -7,19 +7,20 @@ import axios from "axios";
 import {addUser } from "../../redux/actions/userAction"
 import {Link} from 'react-router-dom'
 import {useHistory} from "react-router";
-import "../login/styles.css"
+
+import styles from '../../components/login.module.css'
 
 export const RegistrationPage = () => {
   const { control, handleSubmit } = useForm();
   const history = useHistory()
-
+  console.log(styles)
   const onSubmit = async(data) => {
-    await addUser(data) 
+    await addUser(data)
     history.push("/login")
   };
 
   return (
-    <div className="container-form-style">
+    <div className={styles.box}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <label>Login</label>
         <Controller

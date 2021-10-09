@@ -3,9 +3,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { useForm, Controller } from "react-hook-form";
 import { Input } from "@material-ui/core";
-import "../components/styles.css"
+// import "../components/styles.css"
 import {useDispatch} from "react-redux";
-import {logIn} from "../redux/actions/authAction";
 import {useIsAuth} from "../context/AuthContextProvider";
 
 export const Login = () => {
