@@ -6,12 +6,14 @@ import { Input } from "@material-ui/core";
 import "../components/styles.css"
 import {useDispatch} from "react-redux";
 import {logIn} from "../redux/actions/authAction";
+import {useIsAuth} from "../context/AuthContextProvider";
 
 export const Login = () => {
   const { control, handleSubmit } = useForm();
   const dispatch =useDispatch()
+  const {setIsAuth} = useIsAuth()
   const onSubmit = (data) => {
-    dispatch(logIn())
+    setIsAuth(true)
   };
 
   return (
