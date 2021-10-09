@@ -5,18 +5,30 @@ import {Link} from "react-router-dom";
 const DataSets = props => {
 
     const data = [
-        '123', 'dfs', '234td', 'wq1rt4'
+        {id: 'qjcdlk', name: 'ds1'},
+        {id: 'aslasd', name: 'ds2'},
+        {id: 'amsfoq', name: 'ds3'},
+        {id: 'qo12rj', name: 'ds4'},
+        {id: 'q1prfo', name: 'ds5'},
     ]
 
     return (
         <>
-            {data.map(id => (
-                <Link key={id} to={`/datasets/${id}`}>
+            {data.map(dataset => (
+                <Link
+                    key={dataset.id}
+                    to={{
+                        pathname: `/datasets/${dataset.id}`,
+                        state: {
+                            dataset
+                        }
+                    }}
+                >
                     <Button size='large' variant='contained'>
-                        DataSet {id}
+                        {dataset.name}
                     </Button>
                 </Link>
-            ) )}
+            ))}
         </>
     )
 }
