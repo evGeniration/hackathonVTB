@@ -3,14 +3,21 @@ import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 
 const DataSets = props => {
+
+    const data = [
+        '123', 'dfs', '234td', 'wq1rt4'
+    ]
+
     return (
-        <div>
-            <Link to='/datasets/123'>
-                <Button size='large' variant='contained'>
-                    DataSet 1
-                </Button>
-            </Link>
-        </div>
+        <>
+            {data.map(id => (
+                <Link key={id} to={`/datasets/${id}`}>
+                    <Button size='large' variant='contained'>
+                        DataSet {id}
+                    </Button>
+                </Link>
+            ) )}
+        </>
     )
 }
 
