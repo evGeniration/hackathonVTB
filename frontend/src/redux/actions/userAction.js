@@ -10,3 +10,5 @@ export const fetchUsers = () =>{
 }
 
 export const addUser = async(data) => await axios.post('http://localhost:5000/user', data)
+
+export const checkUser = async(data) => await axios.post('http://localhost:5000/user/isregistred', data).then(responce=> responce.data )

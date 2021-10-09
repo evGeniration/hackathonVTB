@@ -36,10 +36,15 @@ let UserService = class UserService {
     async getRegisterUser(dto) {
         const { login, password } = dto;
         const user = await this.userModel.find({ login, password });
-        return {
-            user: user[0],
-            exist: true
-        };
+        if (Object.keys(user).length) {
+            return {
+                user: user[0],
+                exist: true
+            };
+        }
+        else {
+            return { exist: false };
+        }
     }
     async deleteUserById(id) {
         await this.userModel.findByIdAndDelete(id);

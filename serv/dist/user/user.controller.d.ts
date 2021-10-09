@@ -12,6 +12,9 @@ export declare class UserController {
             _id: any;
         };
         exist: boolean;
+    } | {
+        exist: boolean;
+        user?: undefined;
     }>;
     deleteUserById(id: ObjectId): Promise<string>;
 }

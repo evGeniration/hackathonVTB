@@ -10,27 +10,20 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { addUser } from "../redux/actions/userAction";
+import { checkUser } from "../redux/actions/userAction";
 import style from "../components/login.module.css"
 import { width } from "@mui/system";
 
 export const Login = () => {
   const { control, handleSubmit, formState: {errors} } = useForm();
-  const [age, setAge] = React.useState('');
   const dispatch =useDispatch()
-  const {setIsAuth} = useIsAuth()
 
   const onSubmit = async(data) => {
-    // setIsAuth(true)
-    const userObject = {
-     ...data, role: age
-    }
-    console.log(userObject)
-    await addUser(data)
+    await checkUser(data).then(res => setIsAuth(res))
+
   };
-  const changeState = (event) => {
-    setAge(event.target.value);
-  }
+
+  const {setIsAuth} = useIsAuth()
 
 
   return (
@@ -60,25 +53,6 @@ export const Login = () => {
           className="materialUIInput"
         />
         {<p className={style.p}>{errors.password?.message}</p>}
-        <FormControl variant="standard"  className={style.select}>
-          <InputLabel id="demo-simple-select-standard-label">
-            Choose dataset
-          </InputLabel>
-          <Select
-            labelId="demo-simple-select-standard-label"
-            name="selectform"
-            value={age}
-            onChange={changeState}
-            label="Choose dataset"
-            required={{
-              required: "Please, chose there",
-            }}
-          >
-            <MenuItem value={"Romashka"}>Romashka</MenuItem>
-            <MenuItem value={"VTB"}>VTB</MenuItem>
-          </Select>
-          {<p>{errors.selectform?.message}</p>}
-        </FormControl>
         <div>
           <button className={style.button} type="submit">
             Отправить
