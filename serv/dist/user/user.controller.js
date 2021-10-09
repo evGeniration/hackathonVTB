@@ -57,7 +57,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "getUserById", null);
 __decorate([
-    (0, common_1.Get)(''),
+    (0, common_1.Post)('isregistred'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_user_dto_1.CreateUserDto]),

@@ -7,6 +7,11 @@ export declare class UserController {
     createUser(dto: CreateUserDto): Promise<import("./user.schema").User>;
     getAll(): Promise<import("./user.schema").User[]>;
     getUserById(id: ObjectId): Promise<import("./user.schema").User>;
-    getRegisterUser(dto: CreateUserDto): Promise<import("./user.schema").User>;
+    getRegisterUser(dto: CreateUserDto): Promise<{
+        user: import("./user.schema").User & import("mongoose").Document<any, any, any> & {
+            _id: any;
+        };
+        exist: boolean;
+    }>;
     deleteUserById(id: ObjectId): Promise<string>;
 }
