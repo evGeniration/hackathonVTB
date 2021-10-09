@@ -9,13 +9,5 @@ export const fetchUsers = () =>{
     }
 }
 
-export const addUser = (data) =>{
-    return async dispatch => 
-    {
-        console.log(data)
-        const response = await axios.post('http://localhost:5000/user', data)
-        console.log(response.data)
-        return dispatch({})
-    }
-}
+export const addUser = async(data) => await axios.post('http://localhost:5000/user', data)
 
