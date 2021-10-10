@@ -6,6 +6,8 @@ import ds from '../../dataset.json'
 import PieChart from "../../components/Charts/PieChart";
 import BarChart from "../../components/Charts/BarChart";
 import ChartConfig from "../../components/Charts/ChartConfig";
+import {Button} from "@mui/material";
+import {postData} from "../../API/api";
 
 const DataSet = props => {
 
@@ -15,10 +17,17 @@ const DataSet = props => {
         'bar': (data, value, argument) => <BarChart data={data} valueField={value} argumentField={argument}/>
     }
     const location = useLocation()
+    console.log(location)
+
+    const sendData = async () => {
+        const response = await postData(location.state.data)
+        console.log(response)
+    }
 
     return (
         <div className={classes.dataset}>
             {/*<h1>{location.state.dataset.name}</h1>*/}
+            <Button variant='contained' size='large' onClick={()=>sendData()}>SEND AGAIN</Button>
             <Table rows={ds} />
             <ChartConfig data={ds} chartConfig={chartConfig} setChartConfig={setChartConfig}/>
             {chartConfig.argument && chartConfig.value && chartConfig.chart && chartRender[chartConfig.chart](ds, chartConfig.value, chartConfig.argument)}

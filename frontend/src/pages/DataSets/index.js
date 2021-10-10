@@ -76,7 +76,7 @@ const DataSets = () => {
                 to={{
                     pathname:'/datasets/charts',
                     state: {
-
+                        data
                     }
                 }}
             >
