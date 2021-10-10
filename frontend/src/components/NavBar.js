@@ -13,14 +13,13 @@ export const NavBar = () => {
 
 
     const {isAuth, setIsAuth}=useIsAuth()
-    console.log(isAuth, setIsAuth)
+
 
     return (
         <Box  sx={{flexGrow: 1, }}>
             <AppBar position="static">
                 <Toolbar className={styles.navBarBox}>
                    <Typography className={styles.containerText}><Link to="/" className={styles.text}>Home</Link></Typography>
-                    {Object.keys(isAuth).length ? <Typography className={styles.containerText}> <Link className={styles.text} to="/test">To test</Link></Typography> : null}
                     {Object.keys(isAuth).length ? (<Typography className={styles.containerText}  onClick={()=>setIsAuth({})}>Logout</Typography>):(<Typography><Link className={styles.text} to={'/login'}>Login</Link></Typography>)}
                 </Toolbar>
             </AppBar>

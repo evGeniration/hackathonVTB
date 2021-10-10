@@ -22,23 +22,23 @@ const ChartConfig = ({data, setChartConfig, chartConfig}) => {
         <div className={classes.chartConfig}>
             <RadioGroup>
                 <p>Argument</p>
-                {Object.keys(data[0]).map(itemName => (
-                    <FormControlLabel value={itemName} control={<Radio onChange={(event)=>setChartArgument(event.target.value)}/>} label={itemName}/>
+                {Object.keys(data[0]).map((itemName, index) => (
+                    <FormControlLabel key={index} value={itemName} control={<Radio onChange={(event)=>setChartArgument(event.target.value)}/>} label={itemName}/>
                 ))}
             </RadioGroup>
 
             <RadioGroup>
                 <p>Value</p>
-                {Object.keys(data[0]).map(itemName => {
-                    if(typeof data[0][itemName]==='number') return <FormControlLabel value={itemName} control={<Radio onChange={(event)=>setChartValue(event.target.value)}/>} label={itemName}/>
+                {Object.keys(data[0]).map((itemName,index) => {
+                    if(typeof data[0][itemName]==='number' ) return <FormControlLabel key={index} value={itemName} control={<Radio onChange={(event)=>setChartValue(event.target.value)}/>} label={itemName}/>
                     }
                 )}
             </RadioGroup>
 
             <RadioGroup>
                 <p>Chart</p>
-                {chartTypes.map(chartType => (
-                    <FormControlLabel value={chartType} control={<Radio onChange={(event)=>setChartType(event.target.value)}/>} label={chartType}/>
+                {chartTypes.map((chartType,index) => (
+                    <FormControlLabel key={index} value={chartType} control={<Radio onChange={(event)=>setChartType(event.target.value)}/>} label={chartType}/>
                 ))}
             </RadioGroup>
         </div>

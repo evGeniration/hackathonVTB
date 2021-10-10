@@ -16,7 +16,6 @@ const ColumnPicker = ({info, addInfo, removeInfo}) => {
             setChecked(true)
         }
     }
-    console.log(info)
     return (
         <>
             <label className={classes.columnPicker}>
