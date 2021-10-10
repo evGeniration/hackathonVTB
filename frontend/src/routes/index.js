@@ -1,9 +1,9 @@
 import Testing from "../pages/Testing";
-import {Login} from "../pages/Login";
+import Login from "../pages/Login";
 import Home from '../pages/Home'
 import DataSets from "../pages/DataSets";
 import DataSet from "../pages/DataSet";
-import {Registr} from "../pages/Regist";
+import Register from "../pages/Register";
 
 
 export const privateRoutes=[
@@ -29,7 +29,7 @@ export const publicRoutes=[
         path:'/login', exact:true, component:Login
     },
     {
-        path:'/reg', exact:true, component:Registr
+        path:'/reg', exact:true, component:Register
 
     },
     {

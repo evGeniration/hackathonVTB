@@ -4,13 +4,12 @@ import { useForm, Controller } from "react-hook-form";
 import {Link} from 'react-router-dom'
 import { Input } from "@material-ui/core";
 import {useDispatch} from "react-redux";
-import {logIn} from "../redux/actions/authAction";
-import {useIsAuth} from "../context/AuthContextProvider";
-import { checkUser } from "../redux/actions/userAction";
-import style from "../components/login.module.css"
-import { width } from "@mui/system";
+import {logIn} from "../../redux/actions/authAction";
+import {useIsAuth} from "../../context/AuthContextProvider";
+import { checkUser } from "../../redux/actions/userAction";
+import style from "../../components/login.module.css"
 
-export const Login = () => {
+const Login = () => {
   const { control, handleSubmit, formState: {errors} } = useForm();
   const dispatch =useDispatch()
 
@@ -61,3 +60,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login
