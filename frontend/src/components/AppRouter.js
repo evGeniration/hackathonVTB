@@ -16,7 +16,7 @@ export const AppRouter = () => {
                            key={route.path}
                     />
                 )}
-                <Redirect to={"/"}/>
+                <Redirect to={"/datasets"}/>
             </Switch>
             :
             <Switch>
