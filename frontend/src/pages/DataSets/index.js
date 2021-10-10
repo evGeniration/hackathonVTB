@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import classes from './index.module.css'
-import {Button} from "@mui/material";
-import {Link} from "react-router-dom";
 import {ColumnWrapper} from "../../components/ColumnWrapper";
 import {fetchDataSetTypes} from "../../utils/datasetUtils";
 import {getUser} from "../../utils/utils";
 
-const DataSets = () => {
+export const DataSets = () => {
     const [data,setDate]=useState([])
     const user=getUser('user')
     useEffect(()=>{
@@ -21,5 +19,3 @@ const DataSets = () => {
         </div>
     )
 }
-
-export default DataSets

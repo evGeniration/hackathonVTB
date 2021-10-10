@@ -12,7 +12,7 @@ export const privateRoutes=[
         path:'/datasets', exact:true, component:DataSets
     },
     {
-        path:'/datasets/:id', component:DataSet
+        path:'/datasets/charts', component:DataSet
     }
 ]
 

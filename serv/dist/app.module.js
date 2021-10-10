@@ -13,6 +13,10 @@ const user_module_1 = require("./user/user.module");
 const test_module_1 = require("./test/test.module");
 const role_module_1 = require("./role/role.module");
 const datahub_module_1 = require("./datahub/datahub.module");
+<<<<<<< HEAD
+=======
+const sampledata_module_1 = require("./sampledata/sampledata.module");
+>>>>>>> b25a2e36c7167ad388fab0048fa7b71fe6ba4c69
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -23,6 +27,7 @@ AppModule = __decorate([
             test_module_1.TestModule,
             role_module_1.RoleModule,
             datahub_module_1.DatahubModule,
+            sampledata_module_1.SampledataModule,
         ],
     })
 ], AppModule);

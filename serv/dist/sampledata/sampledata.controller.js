@@ -19,18 +19,19 @@ let SampledataController = class SampledataController {
     constructor(sampledataService) {
         this.sampledataService = sampledataService;
     }
-    getTableByTd(urn) {
+    getSampleData(body) {
+        return this.sampledataService.makeTable(body.fields, body.count);
     }
 };
 __decorate([
-    (0, common_1.Get)(':urn'),
-    __param(0, (0, common_1.Param)('urn')),
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
-], SampledataController.prototype, "getTableByTd", null);
+], SampledataController.prototype, "getSampleData", null);
 SampledataController = __decorate([
-    (0, common_1.Controller)('/table'),
+    (0, common_1.Controller)('/sampledata'),
     __metadata("design:paramtypes", [sampledata_service_1.SampledataService])
 ], SampledataController);
 exports.SampledataController = SampledataController;
