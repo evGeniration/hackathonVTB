@@ -1,0 +1,8 @@
+.dataset{
+    max-width: 1200px;
+    margin: 0 auto 100px;
+}
+
+.dataset h1{
+    text-align: center;
+}
