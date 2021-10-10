@@ -11,8 +11,9 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const user_module_1 = require("./user/user.module");
 const test_module_1 = require("./test/test.module");
-const table_module_1 = require("./table/table.module");
 const role_module_1 = require("./role/role.module");
+const datahub_module_1 = require("./datahub/datahub.module");
+const sampledata_module_1 = require("./sampledata/sampledata.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -21,8 +22,9 @@ AppModule = __decorate([
             mongoose_1.MongooseModule.forRoot('mongodb+srv://admin:admin@cluster0.ujp1e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
             user_module_1.UserModule,
             test_module_1.TestModule,
-            table_module_1.TableModule,
-            role_module_1.RoleModule
+            role_module_1.RoleModule,
+            datahub_module_1.DatahubModule,
+            sampledata_module_1.SampledataModule,
         ],
     })
 ], AppModule);
