@@ -16,3 +16,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+main {
+  margin: 10px 20px;
+}
+
+h1 {
+  margin: 1em 0;
+}

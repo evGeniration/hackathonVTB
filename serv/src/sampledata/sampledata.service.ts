@@ -17,6 +17,9 @@ export class SampledataService{
         let to = new Date('2021-10-09T01:57:45.271Z')
         return new Date(Math.random() * (to.getTime() - from.getTime() + 1) + from.getTime())
     }
+    getRandomBoolean(): Boolean {
+        return Math.random() >= 0.5
+    }
     makeTable(fields, count) {
         let ans = {"table": []}
         for (let i = 0; i < count; i++) {
@@ -31,6 +34,10 @@ export class SampledataService{
                 case 'DATE':
                 case 'TIME':
                     row[field.name] = this.getRandomDate()
+                    break
+
+                case 'BOOLEAN':
+                    row[field.name] = this.getRandomBoolean()
                     break
 
                 case 'STRING':

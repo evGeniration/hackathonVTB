@@ -95,7 +95,9 @@ export class DatahubService {
         
         return axios.request(config)
             .then(response => {
-                return response.data.data.dataset
+                let dataset = response.data.data.dataset
+                dataset.schemaMetadata.fields = dataset.schemaMetadata.fields.filter(element => element.type != "STRUCT")
+                return dataset
             })
             .catch(error => {
                 console.log(error);
