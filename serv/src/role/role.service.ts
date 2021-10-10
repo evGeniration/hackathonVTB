@@ -24,4 +24,10 @@ export class RoleService{
         const roles= await this.roleModel.find()
         return roles
     }
+
+    async updateRole(id:ObjectId,data):Promise<Role>{
+        const role= await this.roleModel.findByIdAndUpdate(id,data)
+        role.save()
+        return role
+    }
 }

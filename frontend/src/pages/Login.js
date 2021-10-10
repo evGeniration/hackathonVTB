@@ -8,15 +8,13 @@ import {logIn} from "../redux/actions/authAction";
 import {useIsAuth} from "../context/AuthContextProvider";
 import { checkUser } from "../redux/actions/userAction";
 import style from "../components/login.module.css"
-import { width } from "@mui/system";
 
 export const Login = () => {
   const { control, handleSubmit, formState: {errors} } = useForm();
   const dispatch =useDispatch()
 
   const onSubmit = async(data) => {
-    await checkUser(data).then(res => res.exist && setIsAuth(res))
-
+    await checkUser(data).then(res => res.exist? setIsAuth(res):alert('no correct data'))
   };
 
   const {setIsAuth} = useIsAuth()

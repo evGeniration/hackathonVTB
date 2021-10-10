@@ -33,6 +33,11 @@ let RoleService = class RoleService {
         const roles = await this.roleModel.find();
         return roles;
     }
+    async updateRole(id, data) {
+        const role = await this.roleModel.findByIdAndUpdate(id, data);
+        role.save();
+        return role;
+    }
 };
 RoleService = __decorate([
     (0, common_1.Injectable)(),
