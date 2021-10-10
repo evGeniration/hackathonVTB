@@ -18,7 +18,7 @@ const DataSet = props => {
 
     return (
         <div className={classes.dataset}>
-            <h1>{location.state.dataset.name}</h1>
+            {/*<h1>{location.state.dataset.name}</h1>*/}
             <Table rows={ds} />
             <ChartConfig data={ds} chartConfig={chartConfig} setChartConfig={setChartConfig}/>
             {chartConfig.argument && chartConfig.value && chartConfig.chart && chartRender[chartConfig.chart](ds, chartConfig.value, chartConfig.argument)}
