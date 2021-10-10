@@ -4,6 +4,7 @@ import {UserModule} from "./user/user.module";
 import {TestModule} from "./test/test.module";
 import {RoleModule} from "./role/role.module";
 import {DatahubModule} from "./datahub/datahub.module";
+import { SampledataModule } from './sampledata/sampledata.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import {DatahubModule} from "./datahub/datahub.module";
       TestModule,
       RoleModule,
       DatahubModule,
+      SampledataModule,
   ],
 })
 export class AppModule {}
