@@ -1,4 +1,5 @@
 import React from 'react'
+import classes from './index.module.css'
 import {Button} from "@mui/material";
 import {Link} from "react-router-dom";
 
@@ -13,7 +14,7 @@ const DataSets = props => {
     ]
 
     return (
-        <>
+        <div className={classes.datasets}>
             {data.map(dataset => (
                 <Link
                     key={dataset.id}
@@ -24,12 +25,12 @@ const DataSets = props => {
                         }
                     }}
                 >
-                    <Button size='large' variant='contained'>
+                    <Button className={classes.datasets_button} size='large' variant='contained'>
                         {dataset.name}
                     </Button>
                 </Link>
             ))}
-        </>
+        </div>
     )
 }
 

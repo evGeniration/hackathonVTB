@@ -1,0 +1,9 @@
+.datasets{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr))
+}
+
+.datasets_button{
+    min-width: 350px;
+    margin: 20px 0;
+}

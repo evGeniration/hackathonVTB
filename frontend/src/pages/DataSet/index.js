@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
+import classes from './index.module.css'
 import Table from "../../components/Table";
-import {useHistory, useLocation} from "react-router";
+import {useLocation} from "react-router";
 import ds from '../../dataset.json'
 import PieChart from "../../components/Charts/PieChart";
 import BarChart from "../../components/Charts/BarChart";
@@ -16,7 +17,7 @@ const DataSet = props => {
     const location = useLocation()
 
     return (
-        <div>
+        <div className={classes.dataset}>
             <h1>{location.state.dataset.name}</h1>
             <Table rows={ds} />
             <ChartConfig data={ds} chartConfig={chartConfig} setChartConfig={setChartConfig}/>

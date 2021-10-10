@@ -1,4 +1,5 @@
 import React from 'react'
+import classes from './index.module.css'
 import {FormControlLabel, Radio, RadioGroup} from "@mui/material";
 
 const ChartConfig = ({data, setChartConfig, chartConfig}) => {
@@ -18,22 +19,24 @@ const ChartConfig = ({data, setChartConfig, chartConfig}) => {
     }
 
     return (
-        <div>
-            <p>Argument</p>
+        <div className={classes.chartConfig}>
             <RadioGroup>
+                <p>Argument</p>
                 {Object.keys(data[0]).map(itemName => (
                     <FormControlLabel value={itemName} control={<Radio onChange={(event)=>setChartArgument(event.target.value)}/>} label={itemName}/>
                 ))}
             </RadioGroup>
-            <p>Value</p>
+
             <RadioGroup>
+                <p>Value</p>
                 {Object.keys(data[0]).map(itemName => {
                     if(typeof data[0][itemName]==='number') return <FormControlLabel value={itemName} control={<Radio onChange={(event)=>setChartValue(event.target.value)}/>} label={itemName}/>
                     }
                 )}
             </RadioGroup>
-            <p>Chart</p>
+
             <RadioGroup>
+                <p>Chart</p>
                 {chartTypes.map(chartType => (
                     <FormControlLabel value={chartType} control={<Radio onChange={(event)=>setChartType(event.target.value)}/>} label={chartType}/>
                 ))}
