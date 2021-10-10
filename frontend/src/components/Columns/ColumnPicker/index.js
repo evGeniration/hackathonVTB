@@ -16,14 +16,15 @@ const ColumnPicker = ({info, addInfo, removeInfo}) => {
             setChecked(true)
         }
     }
-
+    console.log(info)
     return (
         <>
             <label className={classes.columnPicker}>
             <Card>
                 <h3>
-                    <FormControlLabel control={<Checkbox checked={checked} onChange={()=>{changeHandler()}}/>} label={info.name}/>
+                    <FormControlLabel control={<Checkbox checked={checked} onChange={()=>{changeHandler()}}/>} label={info.fieldPath}/>
                 </h3>
+
                 <h4>
                     {info.type}
                 </h4>

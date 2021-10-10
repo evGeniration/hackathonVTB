@@ -1,7 +1,7 @@
 import Testing from "../pages/Testing";
 import {Login} from "../pages/Login";
 import {Home} from '../pages/Home'
-import DataSets from "../pages/DataSets";
+import {DataSets} from "../pages/DataSets";
 import DataSet from "../pages/DataSet";
 import {Registr} from "../pages/Regist";
 
