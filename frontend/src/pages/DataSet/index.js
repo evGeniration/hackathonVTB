@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import classes from './index.module.css'
 import Table from "../../components/Table";
 import {useLocation} from "react-router";
@@ -11,6 +11,7 @@ import {postData} from "../../API/api";
 
 const DataSet = props => {
 
+    const [data, setData] = useState(null)
     const [chartConfig, setChartConfig] = useState({argument:'', value: '', chart:''})
     const chartRender = {
         'pie': (data, value, argument) => <PieChart data={data} valueField={value} argumentField={argument}/>,
@@ -18,19 +19,19 @@ const DataSet = props => {
     }
     const location = useLocation()
     console.log(location)
-
-    const sendData = async () => {
-        const response = await postData(location.state.data)
-        console.log(response)
-    }
+useEffect(()=>{
+    (async ()=>{
+        await postData(location.state.data).then(res=>setData(res.data.table))
+    })()
+},[])
 
     return (
         <div className={classes.dataset}>
-            {/*<h1>{location.state.dataset.name}</h1>*/}
-            <Button variant='contained' size='large' onClick={()=>sendData()}>SEND AGAIN</Button>
-            <Table rows={ds} />
-            <ChartConfig data={ds} chartConfig={chartConfig} setChartConfig={setChartConfig}/>
-            {chartConfig.argument && chartConfig.value && chartConfig.chart && chartRender[chartConfig.chart](ds, chartConfig.value, chartConfig.argument)}
+
+            {data && <><Table rows={data} />
+                <ChartConfig data={data} chartConfig={chartConfig} setChartConfig={setChartConfig}/>
+                {chartConfig.argument && chartConfig.value && chartConfig.chart && chartRender[chartConfig.chart](data, chartConfig.value, chartConfig.argument)}</>
+           }
         </div>
     )
 }

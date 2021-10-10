@@ -11,19 +11,19 @@ const DataSets = () => {
                 tableTitle: "People",
                 types: [{
                     name: "name",
-                    type: 'string'
+                    type: 'STRING'
                 },
                     {
                         name: "age",
-                        type: 'number'
+                        type: 'NUMBER'
                     },
                     {
                         name: "date",
-                        type: 'time Date'
+                        type: 'DATE'
                     },
                     {
                         name: "salary",
-                        type: 'number'
+                        type: 'NUMBER'
                     }]
             },
             {
@@ -31,19 +31,19 @@ const DataSets = () => {
                 types: [
                     {
                         name: "name",
-                        type: 'string'
+                        type: 'STRING'
                     },
                     {
                         name: "age",
-                        type: 'number'
+                        type: 'NUMBER'
                     },
                     {
                         name: "legs",
-                        type: 'number'
+                        type: 'NUMBER'
                     },
                     {
                         name: "eat",
-                        type: 'string'
+                        type: 'STRING'
                     }]
             }
         ]
@@ -59,6 +59,7 @@ const DataSets = () => {
 
     useEffect(()=>{
         data.fields = infos
+        console.log(infos)
     },[infos])
 
     const data = {
