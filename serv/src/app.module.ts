@@ -10,7 +10,7 @@ import {DatahubModule} from "./datahub/datahub.module";
       MongooseModule.forRoot('mongodb+srv://admin:admin@cluster0.ujp1e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
       UserModule,
       TestModule,
-      RoleModule
+      RoleModule,
       DatahubModule,
   ],
 })
