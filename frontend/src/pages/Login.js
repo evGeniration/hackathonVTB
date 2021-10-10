@@ -6,10 +6,6 @@ import { Input } from "@material-ui/core";
 import {useDispatch} from "react-redux";
 import {logIn} from "../redux/actions/authAction";
 import {useIsAuth} from "../context/AuthContextProvider";
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import { checkUser } from "../redux/actions/userAction";
 import style from "../components/login.module.css"
 import { width } from "@mui/system";
@@ -19,7 +15,7 @@ export const Login = () => {
   const dispatch =useDispatch()
 
   const onSubmit = async(data) => {
-    await checkUser(data).then(res => setIsAuth(res))
+    await checkUser(data).then(res => res.exist && setIsAuth(JSON.stringify(res)))
 
   };
 
