@@ -4,6 +4,7 @@ import {ColumnPicker} from "./ColumnPicker";
 import {Card} from "@mui/material";
 
 export const ColumnWrapper = ({tableInfo}) => {
+    console.log(tableInfo)
     return (
         <div>
             <Card >

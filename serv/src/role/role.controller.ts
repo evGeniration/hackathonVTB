@@ -1,4 +1,4 @@
-import {Body, Controller, Delete, Get, Param, Post} from "@nestjs/common";
+import {Body, Controller, Delete, Get, Param, Post, Put} from "@nestjs/common";
 import {RoleService} from "./role.service";
 import {ObjectId} from "mongoose";
 import {CreateRoleDto} from "./create-role.dto";
@@ -18,5 +18,10 @@ export class RoleController{
     @Get('/all')
     getAllRoles(){
         return this.roleService.getAllRoles()
+    }
+    @Put(':id')
+    updateRole(@Body() data,@Param('id') id:ObjectId){
+        console.log(id,data)
+        return this.roleService.updateRole(id,data)
     }
 }

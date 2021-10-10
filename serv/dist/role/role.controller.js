@@ -29,6 +29,10 @@ let RoleController = class RoleController {
     getAllRoles() {
         return this.roleService.getAllRoles();
     }
+    updateRole(data, id) {
+        console.log(id, data);
+        return this.roleService.updateRole(id, data);
+    }
 };
 __decorate([
     (0, common_1.Post)(),
@@ -50,6 +54,14 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
 ], RoleController.prototype, "getAllRoles", null);
+__decorate([
+    (0, common_1.Put)(':id'),
+    __param(0, (0, common_1.Body)()),
+    __param(1, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object]),
+    __metadata("design:returntype", void 0)
+], RoleController.prototype, "updateRole", null);
 RoleController = __decorate([
     (0, common_1.Controller)('/role'),
     __metadata("design:paramtypes", [role_service_1.RoleService])

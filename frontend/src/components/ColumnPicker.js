@@ -9,7 +9,7 @@ export const ColumnPicker = ({info}) => {
             <label>
             <Card>
                 <h3>
-                    {info.name}
+                    {info.fieldPath}
                 </h3>
                 <h4>
                     {info.type}

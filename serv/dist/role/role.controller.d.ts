@@ -7,4 +7,5 @@ export declare class RoleController {
     createRole(dto: CreateRoleDto): Promise<import("./role.schema").Role>;
     deleteRole(id: ObjectId): Promise<string>;
     getAllRoles(): Promise<import("./role.schema").Role[]>;
+    updateRole(data: any, id: ObjectId): Promise<import("./role.schema").Role>;
 }

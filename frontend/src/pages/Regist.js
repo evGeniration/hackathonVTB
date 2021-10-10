@@ -1,10 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { useForm, Controller } from "react-hook-form";
-import {Link} from 'react-router-dom'
 import { Input } from "@material-ui/core";
 import {useDispatch} from "react-redux";
-import {logIn} from "../redux/actions/authAction";
 import {useIsAuth} from "../context/AuthContextProvider";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -12,22 +9,18 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { addUser } from "../redux/actions/userAction";
 import style from "../components/login.module.css"
-import { width } from "@mui/system";
 import {useHistory} from "react-router";
 
 export const Registr = () => {
   const history = useHistory()
   const { control, handleSubmit, formState: {errors} } = useForm();
   const [age, setAge] = React.useState('');
-  const dispatch =useDispatch()
-  const {setIsAuth} = useIsAuth()
 
   const onSubmit = async(data) => {
     const userObject = {
      ...data, role: age
     }
-    console.log(userObject)
-    const response = await addUser(data)
+    const response = await addUser(userObject)
     if(response.status === 201){
       history.push('/login')
     }
@@ -78,7 +71,7 @@ export const Registr = () => {
               required: "Please, chose there",
             }}
           >
-            <MenuItem value={"Romashka"}>Romashka</MenuItem>
+            <MenuItem value={"romashka"}>romashka</MenuItem>
             <MenuItem value={"VTB"}>VTB</MenuItem>
           </Select>
           {<p>{errors.selectform?.message}</p>}

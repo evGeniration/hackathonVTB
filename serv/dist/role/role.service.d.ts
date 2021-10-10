@@ -7,4 +7,5 @@ export declare class RoleService {
     createRole(dto: CreateRoleDto): Promise<Role>;
     deleteRole(id: ObjectId): Promise<string>;
     getAllRoles(): Promise<Role[]>;
+    updateRole(id: ObjectId, data: any): Promise<Role>;
 }
