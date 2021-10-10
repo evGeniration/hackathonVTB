@@ -4,11 +4,13 @@ const AuthContext = React.createContext()
 export const AuthContextProvider = ({children}) => {
 
     const [isAuth, setIsAuth] = useState({});
+
     useEffect(() => {
-        JSON.parse(localStorage.getItem('auth')) ? setIsAuth(true) : setIsAuth(false)
+        const user = JSON.parse(localStorage.getItem('user')) || {}
+        Object.keys(user).length ? setIsAuth(user) : setIsAuth({})
     }, [])
     useEffect(() => {
-        isAuth && localStorage.setItem('user', isAuth) //: localStorage.setItem('user', 'false')
+        localStorage.setItem('user', JSON.stringify(isAuth)) //: localStorage.setItem('user', 'false')
     }, [isAuth])
     return (
         <AuthContext.Provider value={{isAuth, setIsAuth}}>

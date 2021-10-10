@@ -7,7 +7,7 @@ export const AppRouter = () => {
 
     const {isAuth}=useIsAuth()
     return (
-        isAuth ?
+        Object.keys(isAuth).length ?
             <Switch>
                 {privateRoutes.map(route =>
                     <Route path={route.path}

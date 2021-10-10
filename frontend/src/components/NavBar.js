@@ -20,8 +20,8 @@ export const NavBar = () => {
             <AppBar position="static">
                 <Toolbar className={styles.navBarBox}>
                    <Typography className={styles.containerText}><Link to="/" className={styles.text}>Home</Link></Typography>
-                    {isAuth && <Typography className={styles.containerText}> <Link className={styles.text} to="/test">To test</Link></Typography>}
-                    {isAuth ? (<Typography className={styles.containerText}  onClick={()=>setIsAuth(false)}>Logout</Typography>):(<Typography><Link className={styles.text} to={'/login'}>Login</Link></Typography>)}
+                    {Object.keys(isAuth).length ? <Typography className={styles.containerText}> <Link className={styles.text} to="/test">To test</Link></Typography> : null}
+                    {Object.keys(isAuth).length ? (<Typography className={styles.containerText}  onClick={()=>setIsAuth({})}>Logout</Typography>):(<Typography><Link className={styles.text} to={'/login'}>Login</Link></Typography>)}
                 </Toolbar>
             </AppBar>
         </Box>

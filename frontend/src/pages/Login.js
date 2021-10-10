@@ -15,7 +15,7 @@ export const Login = () => {
   const dispatch =useDispatch()
 
   const onSubmit = async(data) => {
-    await checkUser(data).then(res => res.exist && setIsAuth(JSON.stringify(res)))
+    await checkUser(data).then(res => res.exist && setIsAuth(res))
 
   };
 
