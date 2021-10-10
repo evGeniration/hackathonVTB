@@ -6,22 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserModule = void 0;
+exports.RoleModule = void 0;
 const common_1 = require("@nestjs/common");
-const user_controller_1 = require("./user.controller");
-const user_service_1 = require("./user.service");
+const role_controller_1 = require("./role.controller");
+const role_service_1 = require("./role.service");
 const mongoose_1 = require("@nestjs/mongoose");
-const user_schema_1 = require("./user.schema");
-const role_schema_1 = require("../role/role.schema");
-let UserModule = class UserModule {
+const role_schema_1 = require("./role.schema");
+let RoleModule = class RoleModule {
 };
-UserModule = __decorate([
+RoleModule = __decorate([
     (0, common_1.Module)({
-        imports: [mongoose_1.MongooseModule.forFeature([{ name: user_schema_1.User.name, schema: user_schema_1.UserSchema }]),
-            mongoose_1.MongooseModule.forFeature([{ name: role_schema_1.Role.name, schema: role_schema_1.RoleSchema }])],
-        controllers: [user_controller_1.UserController],
-        providers: [user_service_1.UserService]
+        imports: [mongoose_1.MongooseModule.forFeature([{ name: role_schema_1.Role.name, schema: role_schema_1.RoleSchema }])],
+        controllers: [role_controller_1.RoleController],
+        providers: [role_service_1.RoleService]
     })
-], UserModule);
-exports.UserModule = UserModule;
-//# sourceMappingURL=user.module.js.map
+], RoleModule);
+exports.RoleModule = RoleModule;
+//# sourceMappingURL=role.module.js.map

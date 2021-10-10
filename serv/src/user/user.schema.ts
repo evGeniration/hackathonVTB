@@ -1,6 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
-
+import {Document, ObjectId} from 'mongoose';
+import * as mongoose from "mongoose"
+import {Role} from "../role/role.schema";
 export type UserDocument = User & Document;
 
 @Schema()
@@ -11,8 +12,8 @@ export class User {
     @Prop()
     password: string;
 
-    @Prop()
-    role:string;
+    @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Role' })
+    role:Role;
 
 }
 

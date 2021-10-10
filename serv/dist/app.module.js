@@ -11,19 +11,18 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const user_module_1 = require("./user/user.module");
 const test_module_1 = require("./test/test.module");
-const serve_static_1 = require("@nestjs/serve-static");
-const path = require("path");
 const table_module_1 = require("./table/table.module");
+const role_module_1 = require("./role/role.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            serve_static_1.ServeStaticModule.forRoot({ rootPath: path.resolve(__dirname, 'static') }),
             mongoose_1.MongooseModule.forRoot('mongodb+srv://admin:admin@cluster0.ujp1e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'),
             user_module_1.UserModule,
             test_module_1.TestModule,
-            table_module_1.TableModule
+            table_module_1.TableModule,
+            role_module_1.RoleModule
         ],
     })
 ], AppModule);

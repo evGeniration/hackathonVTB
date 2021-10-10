@@ -17,16 +17,20 @@ const common_1 = require("@nestjs/common");
 const user_schema_1 = require("./user.schema");
 const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
+const role_schema_1 = require("../role/role.schema");
 let UserService = class UserService {
-    constructor(userModel) {
+    constructor(userModel, roleModel) {
         this.userModel = userModel;
+        this.roleModel = roleModel;
     }
     async createUser(dto) {
-        const user = await this.userModel.create(dto);
+        const { role } = dto;
+        const obj = await this.roleModel.find({ name: role });
+        const user = await this.userModel.create(Object.assign(Object.assign({}, dto), { role: obj[0]._id }));
         return user;
     }
     async getUserById(id) {
-        const user = await this.userModel.findById(id);
+        const user = await this.userModel.findById(id).populate('role');
         return user;
     }
     async getAll() {
@@ -35,7 +39,7 @@ let UserService = class UserService {
     }
     async getRegisterUser(dto) {
         const { login, password } = dto;
-        const user = await this.userModel.find({ login, password });
+        const user = await this.userModel.find({ login, password }).populate('role');
         if (Object.keys(user).length) {
             return {
                 user: user[0],
@@ -54,7 +58,9 @@ let UserService = class UserService {
 UserService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, mongoose_1.InjectModel)(user_schema_1.User.name)),
-    __metadata("design:paramtypes", [mongoose_2.Model])
+    __param(1, (0, mongoose_1.InjectModel)(role_schema_1.Role.name)),
+    __metadata("design:paramtypes", [mongoose_2.Model,
+        mongoose_2.Model])
 ], UserService);
 exports.UserService = UserService;
 //# sourceMappingURL=user.service.js.map

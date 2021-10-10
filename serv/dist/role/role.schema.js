@@ -9,27 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserSchema = exports.User = void 0;
+exports.RoleSchema = exports.Role = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
-const mongoose = require("mongoose");
-const role_schema_1 = require("../role/role.schema");
-let User = class User {
+let Role = class Role {
 };
 __decorate([
     (0, mongoose_1.Prop)(),
     __metadata("design:type", String)
-], User.prototype, "login", void 0);
+], Role.prototype, "name", void 0);
 __decorate([
     (0, mongoose_1.Prop)(),
-    __metadata("design:type", String)
-], User.prototype, "password", void 0);
-__decorate([
-    (0, mongoose_1.Prop)({ type: mongoose.Schema.Types.ObjectId, ref: 'Role' }),
-    __metadata("design:type", role_schema_1.Role)
-], User.prototype, "role", void 0);
-User = __decorate([
+    __metadata("design:type", Array)
+], Role.prototype, "datasetArr", void 0);
+Role = __decorate([
     (0, mongoose_1.Schema)()
-], User);
-exports.User = User;
-exports.UserSchema = mongoose_1.SchemaFactory.createForClass(User);
-//# sourceMappingURL=user.schema.js.map
+], Role);
+exports.Role = Role;
+exports.RoleSchema = mongoose_1.SchemaFactory.createForClass(Role);
+//# sourceMappingURL=role.schema.js.map
